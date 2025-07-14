@@ -5,6 +5,8 @@ import { FaFire } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { MdLocalMovies } from "react-icons/md";
 import { TbDeviceTvOld } from "react-icons/tb";
+import { IoIosInformationCircle } from "react-icons/io";
+import { GrContact } from "react-icons/gr";
 
 const SideNav = () => {
   return (
@@ -16,17 +18,27 @@ const SideNav = () => {
 
       <nav className="w-[60%] mx-auto flex flex-col justify-center mt-6">
         <h1 className="text-2xl text-semibold mb-4">New Feeds</h1>
-        <Link className="p-4 hover:bg-[#ffd900b6] hover:text-black rounded-lg">
-          <FaFire /> Trending
+        <Link className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg">
+          <FaFire className="mt-1.5" /> Trending
         </Link>
-        <Link className="p-4 hover:bg-[#ffd900b6] hover:text-black rounded-lg">
-          <FaStar /> Popular
+        <Link className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg">
+          <FaStar className="mt-1.5" /> Popular
         </Link>
-        <Link className="p-4 hover:bg-[#ffd900b6] hover:text-black rounded-lg">
-          <MdLocalMovies /> Movies
+        <Link className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg">
+          <MdLocalMovies className="mt-1.5" /> Movies
         </Link>
-        <Link className="p-4 hover:bg-[#ffd900b6] hover:text-black rounded-lg">
-          <TbDeviceTvOld /> TV Shows
+        <Link className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg">
+          <TbDeviceTvOld className="mt-1.5" /> TV Shows
+        </Link>
+      </nav>
+      <hr className="w-[85%] mt-5 mb-5 mx-auto opacity-30" />
+      <nav className="w-[60%] mx-auto flex flex-col justify-center mt-6">
+        <h1 className="text-2xl text-semibold mb-4">Information</h1>
+        <Link className="p-4 hover:bg-[#36363560] flex gap-2 rounded-lg">
+          <IoIosInformationCircle className="mt-1 text-xl" /> About
+        </Link>
+        <Link className="p-4 hover:bg-[#36363560] flex gap-2 rounded-lg">
+          <GrContact className="mt-1.5" /> Contact Us
         </Link>
       </nav>
     </div>
