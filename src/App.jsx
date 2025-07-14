@@ -1,8 +1,11 @@
 import React from 'react'
+import Home from './components/Home'
 
-const App = () => {
+function App() {
   return (
-    <div>App</div>
+    <div className='w-full min-h-screen flex text-white'>
+      <Home />
+    </div>
   )
 }
 
