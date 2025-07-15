@@ -27,58 +27,6 @@ const TopNav = () => {
           <img src="" alt="" />
           <span className="text-lg ">hdfhfh</span>
         </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
-        <Link className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-center gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto">
-          <img src="" alt="" />
-          <span className="text-lg ">hdfhfh</span>
-        </Link>
       </div>
     </div>
   );
