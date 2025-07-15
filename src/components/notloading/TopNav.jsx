@@ -14,7 +14,6 @@ const TopNav = () => {
       try {
         const { data } = await axios.get(`/search/multi?query=${query}`);
         setSearch(data.results)
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -25,7 +24,7 @@ const TopNav = () => {
     }, [query])
 
   return (
-    <div className="w-[100%] h-18 relative flex items-center justify-start ml-45.5 gap-4">
+    <div className="w-[100%] h-14 relative flex items-center justify-start ml-45.5 gap-4">
       <BsSearch className="text-2xl" />
       <input
         onChange={(e) => setQuery(e.target.value)}
@@ -43,7 +42,7 @@ const TopNav = () => {
           return (
             <Link
               key={i}
-              className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-start gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto"
+              className="hover:text-white hover:bg-[#00000040] duration-300 flex items-center justify-start gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto"
             >
               <img
                 className="w-25 h-20 object-cover overflow-hidden mr-5 shadow-md shadow-[#ffffff50]"
