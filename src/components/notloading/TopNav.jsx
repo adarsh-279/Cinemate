@@ -44,7 +44,11 @@ const TopNav = () => {
               key={i}
               className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-start gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto"
             >
-              <img src="" alt="" />
+              <img
+                className="w-25 h-20 object-cover overflow-hidden mr-5"
+                src={`https://image.tmdb.org/t/p/original/${s.backdrop_path}`}
+                alt=""
+              />
               <span className="text-lg ">
                 {s.title || s.original_title || s.name || s.original_name}
               </span>
