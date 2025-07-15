@@ -4,6 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import axios from "../../utils/Axios";
 import { useEffect } from "react";
+import noimg from '../../assets/noimg.jpg'
 
 const TopNav = () => {
   const [query, setQuery] = useState("");
@@ -45,8 +46,14 @@ const TopNav = () => {
               className="hover:text-white hover:bg-[#00000020] duration-300 flex items-center justify-start gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto"
             >
               <img
-                className="w-25 h-20 object-cover overflow-hidden mr-5"
-                src={`https://image.tmdb.org/t/p/original/${s.backdrop_path}`}
+                className="w-25 h-20 object-cover overflow-hidden mr-5 shadow-md shadow-[#ffffff50]"
+                src={
+                  s.backdrop_path ||
+                  s.poster_path ||
+                  s.profile_path ? `https://image.tmdb.org/t/p/original/${
+                    s.backdrop_path || s.poster_path || s.profile_path
+                  }` : noimg
+                }
                 alt=""
               />
               <span className="text-lg ">
