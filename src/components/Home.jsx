@@ -21,7 +21,7 @@ const Home = () => {
 
   const trendingMovies = async () => {
     try {
-      const { data } = await axios.get(`/trending/all/day`);
+      const { data } = await axios.get(`/trending/movie/day`);
       setTrending(data.results);
     } catch (error) {
       console.log(error);
@@ -42,7 +42,7 @@ const Home = () => {
         <Cards data={trending} />
       </div>
     </>
-  ) : <h1>loading</h1>
+  ) : <h1 className="text-9xl text-black">loading</h1>
 };
 
 export default Home;
