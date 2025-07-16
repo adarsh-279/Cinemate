@@ -6,7 +6,7 @@ import Header from "./notloading/Header";
 import Cards from "./notloading/Cards";
 import Loader from "./Loader";
 
-const Home = () => {
+const Home = ({ movieData, tvData }) => {
   const [wallpaper, setWallpaper] = useState(null);
   const [movie, setMovie] = useState(null);
   const [tv, setTV] = useState(null);
@@ -14,11 +14,12 @@ const Home = () => {
   const headerWallpaper = async () => {
     try {
       const { data } = await axios.get(`/trending/all/day`);
-      let randomWallpaper = data.results[Math.floor(Math.random() * data.results.length)];
+      let randomWallpaper =
+        data.results[Math.floor(Math.random() * data.results.length)];
       setWallpaper(randomWallpaper);
     } catch (error) {
       console.log(error);
-    }    
+    }
   };
 
   const trendingMovies = async () => {
@@ -27,7 +28,7 @@ const Home = () => {
       setMovie(data.results);
     } catch (error) {
       console.log(error);
-    }    
+    }
   };
 
   const trendingTV = async () => {
@@ -36,7 +37,7 @@ const Home = () => {
       setTV(data.results);
     } catch (error) {
       console.log(error);
-    }    
+    }
   };
 
   useEffect(() => {
@@ -44,7 +45,7 @@ const Home = () => {
     !movie && trendingMovies();
     !tv && trendingTV();
   }, []);
-  
+
   return wallpaper && movie && tv ? (
     <>
       <SideNav />
@@ -54,7 +55,9 @@ const Home = () => {
         <Cards movieData={movie} tvData={tv} />
       </div>
     </>
-  ) : <Loader />
+  ) : (
+    <Loader />
+  );
 };
 
 export default Home;
