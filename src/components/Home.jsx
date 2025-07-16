@@ -4,6 +4,7 @@ import TopNav from "./notloading/TopNav";
 import axios from "../utils/Axios";
 import Header from "./notloading/Header";
 import Cards from "./notloading/Cards";
+import Loader from "./Loader";
 
 const Home = () => {
   const [wallpaper, setWallpaper] = useState(null);
@@ -53,7 +54,7 @@ const Home = () => {
         <Cards movieData={movie} tvData={tv} />
       </div>
     </>
-  ) : <h1 className="text-9xl text-black">loading</h1>
+  ) : <Loader />
 };
 
 export default Home;

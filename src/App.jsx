@@ -1,12 +1,12 @@
 import React from 'react'
-import Home from './components/Home'
+import Routing from './utils/Routing';
 
 function App() {
   return (
-    <div className='w-[100%] min-h-screen flex text-white overflow-hidden fixed'>
-      <Home />
+    <div className="w-[100%] min-h-screen bg-[#060137f5] flex text-white overflow-hidden fixed">
+      <Routing />
     </div>
-  )
+  );
 }
 
 export default App

@@ -18,16 +18,28 @@ const SideNav = () => {
 
       <nav className="w-[60%] mx-auto flex flex-col justify-center mt-6">
         <h1 className="text-2xl text-semibold mb-4">New Feeds</h1>
-        <Link className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg">
+        <Link
+          to="/trending"
+          className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg"
+        >
           <FaFire className="mt-1.5" /> Trending
         </Link>
-        <Link className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg">
+        <Link
+          to="/popular"
+          className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg"
+        >
           <FaStar className="mt-1.5" /> Popular
         </Link>
-        <Link className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg">
+        <Link
+          to="/movies"
+          className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg"
+        >
           <MdLocalMovies className="mt-1.5" /> Movies
         </Link>
-        <Link className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg">
+        <Link
+          to="/tvshows"
+          className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg"
+        >
           <TbDeviceTvOld className="mt-1.5" /> TV Shows
         </Link>
       </nav>
