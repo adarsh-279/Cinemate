@@ -10,7 +10,7 @@ import { GrContact } from "react-icons/gr";
 
 const SideNav = () => {
   return (
-    <div className="w-[20%] h-screen bg-[#090137] border-r-2 border-[#ffffff20]">
+    <div className="w-[20%] h-screen bg-[#090137] border-r-2 border-[#ffffff20] overflow-hidden">
       <h1 className="flex text-3xl justify-center mt-6 gap-5 border-b-2 border-[#ffffff30] w-[70%] mx-auto pb-2">
         <FaTv className="mt-1.5 text-[#ffd700]" />
         <span>Cinemate</span>

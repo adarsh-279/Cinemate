@@ -13,7 +13,7 @@ const Header = ({ data }) => {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="w-[80vw] h-[60vh] flex flex-col justify-end p-10"
+      className="w-[80vw] h-[60vh] flex flex-col justify-end p-10 overflow-auto overflow-x-hidden overflow-y-auto"
     >
       <h1 className="text-5xl font-semibold w-[70%] mb-2 text-[#ffffff95]">
         {data.title || data.name}
