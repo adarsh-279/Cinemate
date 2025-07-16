@@ -24,7 +24,7 @@ const TopNav = () => {
     }, [query])
 
   return (
-    <div className="w-[100%] h-14 relative flex items-center justify-start ml-45.5 gap-4 overflow-hidden">
+    <div className="w-[100%] h-14 relative flex items-center justify-start ml-45.5 gap-4">
       <BsSearch className="text-2xl" />
       <input
         onChange={(e) => setQuery(e.target.value)}

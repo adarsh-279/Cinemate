@@ -7,7 +7,8 @@ import Cards from "./notloading/Cards";
 
 const Home = () => {
   const [wallpaper, setWallpaper] = useState(null);
-  const [trending, setTrending] = useState(null);
+  const [movie, setMovie] = useState(null);
+  const [tv, setTV] = useState(null);
 
   const headerWallpaper = async () => {
     try {
@@ -22,7 +23,16 @@ const Home = () => {
   const trendingMovies = async () => {
     try {
       const { data } = await axios.get(`/trending/movie/day`);
-      setTrending(data.results);
+      setMovie(data.results);
+    } catch (error) {
+      console.log(error);
+    }    
+  };
+
+  const trendingTV = async () => {
+    try {
+      const { data } = await axios.get(`/trending/tv/day`);
+      setTV(data.results);
     } catch (error) {
       console.log(error);
     }    
@@ -30,16 +40,17 @@ const Home = () => {
 
   useEffect(() => {
     !wallpaper && headerWallpaper();
-    !trending && trendingMovies();
+    !movie && trendingMovies();
+    !tv && trendingTV();
   }, []);
   
-  return wallpaper && trending ? (
+  return wallpaper && movie && tv ? (
     <>
       <SideNav />
       <div className="w-[80%] h-screen bg-[#060137f5] overflow-auto overflow-x-hidden">
         <TopNav />
         <Header data={wallpaper} />
-        <Cards data={trending} />
+        <Cards movieData={movie} tvData={tv} />
       </div>
     </>
   ) : <h1 className="text-9xl text-black">loading</h1>
