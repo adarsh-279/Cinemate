@@ -7,6 +7,8 @@ import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Trending = () => {
+  document.title = "Cinemate | Trending";
+
   const navigate = useNavigate();
 
     const [trending, setTrending] = useState([]);

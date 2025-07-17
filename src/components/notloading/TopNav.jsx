@@ -37,8 +37,8 @@ const TopNav = () => {
         <RxCross2 onClick={() => setQuery("")} className="text-3xl" />
       ) : null}
 
-      <div className="absolute w-[66.8%] max-h-80 mx-auto top-[88%] font-semibold text-[#ffffff60] bg-[#090137] overflow-y-auto overflow-x-hidden">
-         {search.map((s,i)=> {
+      <div className="absolute w-[66.8%] max-h-80 mx-auto top-[88%] font-semibold text-[#ffffff60] bg-[#090137] overflow-y-auto overflow-x-hidden border-l-2 border-r-2 border-b-2 border-[#ffffff40]">
+        {search.map((s, i) => {
           return (
             <Link
               key={i}
@@ -47,11 +47,11 @@ const TopNav = () => {
               <img
                 className="w-25 h-20 object-cover overflow-hidden mr-5 shadow-md shadow-[#ffffff50]"
                 src={
-                  s.backdrop_path ||
-                  s.poster_path ||
-                  s.profile_path ? `https://image.tmdb.org/t/p/original/${
-                    s.backdrop_path || s.poster_path || s.profile_path
-                  }` : noimg
+                  s.backdrop_path || s.poster_path || s.profile_path
+                    ? `https://image.tmdb.org/t/p/original/${
+                        s.backdrop_path || s.poster_path || s.profile_path
+                      }`
+                    : noimg
                 }
                 alt=""
               />

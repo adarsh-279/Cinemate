@@ -7,6 +7,8 @@ import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const People = () => {
+  document.title = "Cinemate | People";
+
   const navigate = useNavigate();
 
   const [people, setpeople] = useState([]);
@@ -25,7 +27,7 @@ const People = () => {
     } catch (error) {
       console.log(error);
     }
-    };
+  };
 
   const refreshHandler = () => {
     if (people.length === 0) {
@@ -55,9 +57,7 @@ const People = () => {
             }}
             className="text-6xl"
           />
-          <h1 className="text-5xl opacity-90 ml-[5%] font-semibold">
-            People
-          </h1>
+          <h1 className="text-5xl opacity-90 ml-[5%] font-semibold">People</h1>
           <TopNav className="-ml-45.5" />
         </div>
         <div className="flex flex-row flex-wrap ml-4 gap-6 justify-start">
@@ -65,9 +65,7 @@ const People = () => {
             <div key={i} className="w-65 h-92 bg-[#00000040] rounded-2xl">
               <img
                 className="w-55 h-70 mt-4 rounded-xl mx-auto overflow-hidden object-cover"
-                src={`https://image.tmdb.org/t/p/original/${
-                   d.profile_path
-                }`}
+                src={`https://image.tmdb.org/t/p/original/${d.profile_path}`}
                 alt=""
               />
               <h1 className="text-lg w-[85%] font-semibold mx-auto mt-4 text-center text-[#ffffff95]">

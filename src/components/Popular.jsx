@@ -7,7 +7,7 @@ import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Popular = () => {
-  document.title = "Cinemate | Popular"
+  document.title = "Cinemate | Popular";
   
   const navigate = useNavigate();
 

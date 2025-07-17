@@ -7,6 +7,7 @@ import { MdLocalMovies } from "react-icons/md";
 import { TbDeviceTvOld } from "react-icons/tb";
 import { IoIosInformationCircle } from "react-icons/io";
 import { GrContact } from "react-icons/gr";
+import { IoMdPerson } from "react-icons/io";
 
 const SideNav = () => {
   return (
@@ -46,7 +47,7 @@ const SideNav = () => {
           to="/people"
           className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg"
         >
-          <TbDeviceTvOld className="mt-1.5" /> People
+          <IoMdPerson className="mt-1.5" /> People
         </Link>
       </nav>
       <hr className="w-[85%] mt-5 mb-5 mx-auto opacity-30" />

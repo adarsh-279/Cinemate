@@ -7,6 +7,8 @@ import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const TVshows = () => {
+  document.title = "Cinemate | TV Shows";
+
   const navigate = useNavigate();
 
   const [TVshow, setTVshow] = useState([]);

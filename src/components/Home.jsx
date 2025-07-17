@@ -7,6 +7,8 @@ import Cards from "./notloading/Cards";
 import Loader from "./Loader";
 
 const Home = ({ movieData, tvData }) => {
+  document.title = "Cinemate";
+
   const [wallpaper, setWallpaper] = useState(null);
   const [movie, setMovie] = useState(null);
   const [tv, setTV] = useState(null);

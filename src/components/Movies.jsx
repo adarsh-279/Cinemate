@@ -7,6 +7,8 @@ import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Movie = () => {
+  document.title = "Cinemate | Movies";
+  
   const navigate = useNavigate();
 
   const [movie, setmovie] = useState([]);
