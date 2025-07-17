@@ -7,17 +7,19 @@ import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Popular = () => {
+  document.title = "Cinemate | Popular"
+  
   const navigate = useNavigate();
 
-  const [trending, setTrending] = useState([]);
+  const [popular, setpopular] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
 
-  const trendingShow = async () => {
+  const popularShow = async () => {
     try {
-      const { data } = await axios.get(`/trending/all/week?page=${page}`);
+      const { data } = await axios.get(`/movie/popular?page=${page}`);
       if (data.results.length > 0) {
-        setTrending((prev) => [...prev, ...data.results]);
+        setpopular((prev) => [...prev, ...data.results]);
         setPage(page + 1);
       } else {
         sethasMore(false);
@@ -28,11 +30,11 @@ const Popular = () => {
   };
 
   const refreshHandler = () => {
-    if (trending.length === 0) {
-      trendingShow();
+    if (popular.length === 0) {
+      popularShow();
     } else {
       setPage(1);
-      setTrending([]);
+      setpopular([]);
     }
   };
 
@@ -40,10 +42,10 @@ const Popular = () => {
     refreshHandler();
   }, []);
 
-  return trending.length > 0 ? (
+  return popular.length > 0 ? (
     <InfiniteScroll
-      dataLength={trending.length}
-      next={trendingShow}
+      dataLength={popular.length}
+      next={popularShow}
       hasMore={hasMore}
       loader={<Loader />}
     >
@@ -56,12 +58,12 @@ const Popular = () => {
             className="text-6xl"
           />
           <h1 className="text-5xl opacity-90 ml-[5%] font-semibold">
-            Trending
+            Popular
           </h1>
           <TopNav className="-ml-45.5" />
         </div>
         <div className="flex flex-row flex-wrap ml-4 gap-6 justify-start">
-          {trending.map((d, i) => (
+          {popular.map((d, i) => (
             <div key={i} className="w-65 h-92 bg-[#00000040] rounded-2xl">
               <img
                 className="w-55 h-70 mt-4 rounded-xl mx-auto overflow-hidden object-cover"
