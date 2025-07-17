@@ -57,9 +57,7 @@ const Movie = () => {
             }}
             className="text-6xl"
           />
-          <h1 className="text-5xl opacity-90 ml-[5%] font-semibold">
-            Movies
-          </h1>
+          <h1 className="text-5xl opacity-90 ml-[5%] font-semibold">Movies</h1>
           <TopNav className="-ml-45.5" />
         </div>
         <div className="flex flex-row flex-wrap ml-4 gap-6 justify-start">
@@ -75,6 +73,11 @@ const Movie = () => {
               <h1 className="text-lg w-[85%] font-semibold mx-auto mt-4 text-center text-[#ffffff95]">
                 {d.title || d.name}
               </h1>
+              <div className="w-10 h-10 rounded-full bg-[#ffd700] relative flex items-center justify-center -top-[30%]">
+                <h1 className="text-[#000000] font-bold absolute">
+                  {Math.round((d.vote_average / 10) * 100)}%
+                </h1>
+              </div>
             </div>
           ))}
         </div>
