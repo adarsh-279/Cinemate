@@ -42,6 +42,12 @@ const SideNav = () => {
         >
           <TbDeviceTvOld className="mt-1.5" /> TV Shows
         </Link>
+        <Link
+          to="/people"
+          className="p-4 hover:bg-[#ffd900b6] flex gap-2 hover:text-black rounded-lg"
+        >
+          <TbDeviceTvOld className="mt-1.5" /> People
+        </Link>
       </nav>
       <hr className="w-[85%] mt-5 mb-5 mx-auto opacity-30" />
       <nav className="w-[60%] mx-auto flex flex-col justify-center mt-6">
