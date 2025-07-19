@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import TopNav from "./notloading/TopNav";
 import axios from "../utils/Axios";
 import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
+import PeopleDetails from "./PeopleDetails";
 
 const People = () => {
   document.title = "Cinemate | People";
@@ -62,16 +63,18 @@ const People = () => {
         </div>
         <div className="flex flex-row flex-wrap ml-4 gap-6 justify-start">
           {people.map((d, i) => (
-            <div key={i} className="w-65 h-92 bg-[#00000040] rounded-2xl">
-              <img
-                className="w-55 h-70 mt-4 rounded-xl mx-auto overflow-hidden object-cover"
-                src={`https://image.tmdb.org/t/p/original/${d.profile_path}`}
-                alt=""
-              />
-              <h1 className="text-lg w-[85%] font-semibold mx-auto mt-4 text-center text-[#ffffff95]">
-                {d.title || d.name}
-              </h1>
-            </div>
+            <Link to={`/people/details/${d.id}`}>
+              <div key={i} className="w-65 h-92 bg-[#00000040] rounded-2xl pt-2">
+                <img
+                  className="w-55 h-70 mt-4 rounded-xl mx-auto overflow-hidden object-cover"
+                  src={`https://image.tmdb.org/t/p/original/${d.profile_path}`}
+                  alt=""
+                />
+                <h1 className="text-lg w-[85%] font-semibold mx-auto mt-4 text-center text-[#ffffff95]">
+                  {d.title || d.name}
+                </h1>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
