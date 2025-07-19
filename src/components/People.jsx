@@ -5,7 +5,6 @@ import TopNav from "./notloading/TopNav";
 import axios from "../utils/Axios";
 import Loader from "./Loader";
 import InfiniteScroll from "react-infinite-scroll-component";
-import PeopleDetails from "./PeopleDetails";
 
 const People = () => {
   document.title = "Cinemate | People";

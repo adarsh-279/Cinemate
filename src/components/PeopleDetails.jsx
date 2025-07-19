@@ -19,8 +19,6 @@ const PeopleDetails = () => {
       console.error(error);
     }
   };
-  console.log(person);
-  
 
   useEffect(() => {
     fetchPerson();
