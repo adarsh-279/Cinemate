@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import TopNav from "./notloading/TopNav";
 import axios from "../utils/Axios";
@@ -62,23 +62,25 @@ const Movie = () => {
         </div>
         <div className="flex flex-row flex-wrap ml-4 gap-6 justify-start">
           {movie.map((d, i) => (
-            <div key={i} className="w-65 h-92 bg-[#00000040] rounded-2xl">
-              <img
-                className="w-55 h-70 mt-4 rounded-xl mx-auto overflow-hidden object-cover"
-                src={`https://image.tmdb.org/t/p/original/${
-                  d.backdrop_path || d.poster_path
-                }`}
-                alt=""
-              />
-              <h1 className="text-lg w-[85%] font-semibold mx-auto mt-4 text-center text-[#ffffff95]">
-                {d.title || d.name}
-              </h1>
-              <div className="w-10 h-10 rounded-full bg-[#ffd700] relative flex items-center justify-center -top-[30%]">
-                <h1 className="text-[#000000] font-bold absolute">
-                  {Math.round((d.vote_average / 10) * 100)}%
+            <Link key={i} to={`/movies/details/${d.id}`}>
+              <div key={i} className="w-65 h-92 p-2 bg-[#00000040] rounded-2xl">
+                <img
+                  className="w-55 h-70 mt-4 rounded-xl mx-auto overflow-hidden object-cover"
+                  src={`https://image.tmdb.org/t/p/original/${
+                    d.backdrop_path || d.poster_path
+                  }`}
+                  alt=""
+                />
+                <h1 className="text-lg w-[85%] font-semibold mx-auto mt-4 text-center text-[#ffffff95]">
+                  {d.title || d.name}
                 </h1>
+                <div className="w-10 h-10 rounded-full bg-[#ffd700] relative flex items-center justify-center -top-[30%]">
+                  <h1 className="text-[#000000] font-bold absolute">
+                    {Math.round((d.vote_average / 10) * 100)}%
+                  </h1>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
