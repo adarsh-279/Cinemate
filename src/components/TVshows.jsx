@@ -67,7 +67,7 @@ const TVshows = () => {
             <Link key={i} to={`/tvshows/details/${d.id}`}>
               <div
                 key={i}
-                className="w-65 h-92 p-2 bg-[#00000040] rounded-2xl"
+                className="w-65 h-96 p-2 bg-[#00000040] rounded-2xl"
               >
                 <img
                   className="w-55 h-70 mt-4 rounded-xl mx-auto overflow-hidden object-cover"
