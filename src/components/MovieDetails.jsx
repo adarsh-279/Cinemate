@@ -3,12 +3,14 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "../utils/Axios";
 import Loader from "./Loader";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaPlay } from "react-icons/fa";
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setmovie] = useState(null);
   const [cast, setCast] = useState([]);
   const [similarMovies, setSimilarMovies] = useState([]);
+  const [trailerKey, setTrailerKey] = useState(null);
 
   const navigate = useNavigate();
 
@@ -20,6 +22,11 @@ const MovieDetails = () => {
       setCast(creditsRes.data.cast);
       const similarRes = await axios.get(`/movie/${id}/similar`);
       setSimilarMovies(similarRes.data.results);
+      const videoRes = await axios.get(`/movie/${id}/videos`);
+      const trailer = videoRes.data.results.find(
+        (vid) => vid.type === "Trailer" && vid.site === "YouTube"
+      );
+      setTrailerKey(trailer?.key);
       document.title = `Cinemate | ${data.title}`;
     } catch (error) {
       console.error(error);
@@ -57,6 +64,19 @@ const MovieDetails = () => {
             <p className="mt-4 opacity-80">
               {movie.overview || "Overview not available."}
             </p>
+            {trailerKey && (
+              <button
+                className="bg-[#ffd700] text-black px-6 py-2 rounded-xl mt-4 hover:bg-red-700 hover:text-white transition flex items-center gap-2"
+                onClick={() =>
+                  window.open(
+                    `https://www.youtube.com/watch?v=${trailerKey}`,
+                    "_blank"
+                  )
+                }
+              >
+                <FaPlay /> Play Trailer
+              </button>
+            )}
           </div>
         </div>
         {cast.length > 0 && (
@@ -77,7 +97,34 @@ const MovieDetails = () => {
             </div>
           </div>
         )}
-      
+        {similarMovies.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-3xl font-bold mb-6">Similar Movies</h2>
+            <div className="flex flex-wrap gap-6">
+              {similarMovies.map((movie) => (
+                <Link key={movie.id} to={`/movies/details/${movie.id}`}>
+                  <div className="w-65 h-96 p-2 bg-[#00000040] rounded-2xl">
+                    <img
+                      className="w-55 h-70 mt-4 rounded-xl mx-auto object-cover"
+                      src={`https://image.tmdb.org/t/p/original/${
+                        movie.poster_path || movie.backdrop_path
+                      }`}
+                      alt={movie.title}
+                    />
+                    <h1 className="text-lg w-[85%] font-semibold mx-auto mt-4 text-center text-[#ffffff95]">
+                      {movie.title}
+                    </h1>
+                    <div className="w-10 h-10 rounded-full bg-[#ffd700] relative flex items-center justify-center -top-[30%]">
+                      <h1 className="text-[#000000] font-bold absolute">
+                        {Math.round((movie.vote_average / 10) * 100)}%
+                      </h1>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

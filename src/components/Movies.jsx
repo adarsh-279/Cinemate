@@ -63,7 +63,7 @@ const Movie = () => {
         <div className="flex flex-row flex-wrap ml-4 gap-6 justify-start">
           {movie.map((d, i) => (
             <Link key={i} to={`/movies/details/${d.id}`}>
-              <div key={i} className="w-65 h-92 p-2 bg-[#00000040] rounded-2xl">
+              <div key={i} className="w-65 h-96 p-2 bg-[#00000040] rounded-2xl">
                 <img
                   className="w-55 h-70 mt-4 rounded-xl mx-auto overflow-hidden object-cover"
                   src={`https://image.tmdb.org/t/p/original/${
