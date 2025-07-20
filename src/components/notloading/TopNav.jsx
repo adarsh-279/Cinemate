@@ -4,24 +4,24 @@ import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import axios from "../../utils/Axios";
 import { useEffect } from "react";
-import noimg from '../../assets/noimg.jpg'
+import noimg from "../../assets/noimg.jpg";
 
 const TopNav = () => {
   const [query, setQuery] = useState("");
-  const [search, setSearch] = useState([])
+  const [search, setSearch] = useState([]);
 
-    const getSearches = async () => {
-      try {
-        const { data } = await axios.get(`/search/multi?query=${query}`);
-        setSearch(data.results)
-      } catch (error) {
-        console.log(error);
-      }
-    };
-  
-    useEffect(() => {
-      getSearches();
-    }, [query])
+  const getSearches = async () => {
+    try {
+      const { data } = await axios.get(`/search/multi?query=${query}`);
+      setSearch(data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getSearches();
+  }, [query]);
 
   return (
     <div className="w-[100%] h-14 relative flex items-center justify-start ml-45.5 gap-4">
@@ -42,6 +42,13 @@ const TopNav = () => {
           return (
             <Link
               key={i}
+              to={
+                s.media_type === "tv"
+                  ? `/tvshows/details/${s.id}`
+                  : s.media_type === "movie"
+                  ? `/movies/details/${s.id}`
+                  : `/people/details/${s.id}`
+              }
               className="hover:text-white hover:bg-[#00000040] duration-300 flex items-center justify-start gap-2 w-[95%] mx-auto mt-2 px-4 py-3 border-b-2 overflow-y-auto"
             >
               <img
