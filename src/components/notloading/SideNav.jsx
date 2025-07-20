@@ -53,10 +53,10 @@ const SideNav = () => {
       <hr className="w-[85%] mt-5 mb-5 mx-auto opacity-30" />
       <nav className="w-[60%] mx-auto flex flex-col justify-center mt-6">
         <h1 className="text-2xl text-semibold mb-4">Information</h1>
-        <Link className="p-4 hover:bg-[#36363560] flex gap-2 rounded-lg">
+        <Link to="/about" className="p-4 hover:bg-[#36363560] flex gap-2 rounded-lg">
           <IoIosInformationCircle className="mt-1 text-xl" /> About
         </Link>
-        <Link className="p-4 hover:bg-[#36363560] flex gap-2 rounded-lg">
+        <Link to="/contact" className="p-4 hover:bg-[#36363560] flex gap-2 rounded-lg">
           <GrContact className="mt-1.5" /> Contact Us
         </Link>
       </nav>

@@ -57,7 +57,7 @@ const TVshows = () => {
             }}
             className="text-6xl"
           />
-          <h1 className="text-5xl opacity-90 ml-[5%] font-semibold">
+          <h1 className="text-5xl w-80 opacity-90 ml-[3%] font-semibold">
             TV Shows
           </h1>
           <TopNav className="-ml-45.5" />
