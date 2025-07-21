@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTv } from "react-icons/fa6";
+import { LiaTvSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 import { FaFire } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
@@ -13,7 +13,7 @@ const SideNav = () => {
   return (
     <div className="w-[20%] h-screen bg-[#090137] border-r-2 border-[#ffffff20] overflow-hidden">
       <h1 className="flex text-3xl justify-center mt-6 gap-5 border-b-2 border-[#ffffff30] w-[70%] mx-auto pb-2">
-        <FaTv className="mt-1.5 text-[#ffd700]" />
+        <LiaTvSolid className="mt-0.5 text-[#ffd700] text-4xl" />
         <span>Cinemate</span>
       </h1>
 
@@ -53,10 +53,16 @@ const SideNav = () => {
       <hr className="w-[85%] mt-5 mb-5 mx-auto opacity-30" />
       <nav className="w-[60%] mx-auto flex flex-col justify-center mt-6">
         <h1 className="text-2xl text-semibold mb-4">Information</h1>
-        <Link to="/about" className="p-4 hover:bg-[#36363560] flex gap-2 rounded-lg">
+        <Link
+          to="/about"
+          className="p-4 hover:bg-[#ffd90095] hover:text-black flex gap-2 rounded-lg"
+        >
           <IoIosInformationCircle className="mt-1 text-xl" /> About
         </Link>
-        <Link to="/contact" className="p-4 hover:bg-[#36363560] flex gap-2 rounded-lg">
+        <Link
+          to="/contact"
+          className="p-4 hover:bg-[#ffd90095] hover:text-black flex gap-2 rounded-lg"
+        >
           <GrContact className="mt-1.5" /> Contact Us
         </Link>
       </nav>
