@@ -44,24 +44,6 @@ Here are some potential features and improvements planned for future iterations 
 
 > Cinemate aims to evolve from a simple movie browser into a fully interactive and personalized cinematic platform.
 
-## 🚀 Getting Started
-
-Follow these steps to run the project locally:
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/adarsh-279/Cinemate
-
-# 2. Navigate to the project directory
-cd cinemate
-
-# 3. Install dependencies
-npm install
-
-# 4. Start the development server
-npm start
-```
-
 ---
 
 ## 🖼️ Website's Screenshot
